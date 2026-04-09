@@ -11,7 +11,7 @@ public class SeoService {
 
     private final SeoResultRepository repository;
 
-    // ✅ Constructor Injection (BEST PRACTICE)
+    //  Constructor Injection (BEST PRACTICE)
     public SeoService(SeoResultRepository repository) {
         this.repository = repository;
     }
@@ -60,7 +60,7 @@ public class SeoService {
         } catch (Exception e) {
             e.printStackTrace();
 
-            // 🔴 fallback values (but still saved)
+            //  fallback values (but still saved)
             result.setUrl(url);
             result.setKeyword(keyword);
             result.setWordCount(0);
@@ -68,7 +68,7 @@ public class SeoService {
             result.setScore(0);
         }
 
-        // ✅ ALWAYS SAVE (IMPORTANT FIX)
+        //  ALWAYS SAVE (IMPORTANT FIX)
         return repository.save(result);
     }
 }

@@ -27,7 +27,7 @@ public class KeywordService {
         result.setKeyword(keyword);
         result.setResults(String.join(", ", list));
 
-        repository.save(result); // ✅ SAVE EVERY TIME
+        repository.save(result); //  SAVE EVERY TIME
 
         return list;
     }

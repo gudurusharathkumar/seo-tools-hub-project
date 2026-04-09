@@ -16,6 +16,6 @@ public class CheckerController {
 
     @GetMapping("/backlinks")
     public BacklinkResult backlinks(@RequestParam String url) {
-        return service.checkBacklinks(url); // ✅ FIXED
+        return service.checkBacklinks(url); //  FIXED
     }
 }

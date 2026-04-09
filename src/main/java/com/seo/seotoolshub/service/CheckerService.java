@@ -29,6 +29,6 @@ public class CheckerService {
             result.setBacklinks(0);
         }
 
-        return repository.save(result); // ✅ SAVE EVERY TIME
+        return repository.save(result); //  SAVE EVERY TIME
     }
 }

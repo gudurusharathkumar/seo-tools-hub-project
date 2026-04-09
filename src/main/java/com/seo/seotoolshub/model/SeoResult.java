@@ -15,7 +15,7 @@ public class SeoResult {
     private int keywordCount;
     private int score;
 
-    // ✅ GETTERS AND SETTERS
+    //  GETTERS AND SETTERS
 
     public Long getId() {
         return id;

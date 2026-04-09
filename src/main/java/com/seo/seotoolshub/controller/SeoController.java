@@ -10,7 +10,7 @@ public class SeoController {
 
     private final SeoService seoService;
 
-    // ✅ Constructor Injection
+    //  Constructor Injection
     public SeoController(SeoService seoService) {
         this.seoService = seoService;
     }

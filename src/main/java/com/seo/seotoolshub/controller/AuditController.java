@@ -16,6 +16,6 @@ public class AuditController {
 
     @GetMapping("/audit")
     public AuditResult audit(@RequestParam String url) {
-        return auditService.auditWebsite(url); // ✅ FIXED
+        return auditService.auditWebsite(url); //  FIXED
     }
 }

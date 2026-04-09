@@ -8,14 +8,14 @@ import java.util.Map;
 @Service
 public class GeneratorService {
 
-    // 🔥 META TAG GENERATOR (ONLY LOGIC)
+    //  META TAG GENERATOR (ONLY LOGIC)
     public String generateMetaTags(Map<String, String> data) {
 
         String title = data.getOrDefault("title", "").trim();
         String description = data.getOrDefault("description", "").trim();
         String keywords = data.getOrDefault("keywords", "").trim();
 
-        // ❌ prevent invalid input
+        //  prevent invalid input
         if (title.isEmpty() || description.isEmpty()) {
             return "Invalid meta data";
         }
@@ -25,7 +25,7 @@ public class GeneratorService {
                 "<meta name=\"keywords\" content=\"" + keywords + "\">";
     }
 
-    // 🔥 SITEMAP GENERATOR (STRICT + CLEAN)
+    //  SITEMAP GENERATOR (STRICT + CLEAN)
     public String generateSitemap(Map<String, Object> data) {
 
         StringBuilder sitemap = new StringBuilder();

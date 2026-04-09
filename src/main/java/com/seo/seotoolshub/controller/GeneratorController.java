@@ -20,13 +20,13 @@ public class GeneratorController {
         this.repository = repository;
     }
 
-    // 🔥 META API
+    //  META API
     @PostMapping("/meta")
     public String generateMeta(@RequestBody Map<String, String> data) {
 
         String result = service.generateMetaTags(data);
 
-        // ❌ don't save invalid
+        //  don't save invalid
         if (result.equals("Invalid meta data")) {
             return result;
         }
@@ -40,13 +40,13 @@ public class GeneratorController {
         return result;
     }
 
-    // 🔥 SITEMAP API
+    //  SITEMAP API
     @PostMapping("/sitemap")
     public String generateSitemap(@RequestBody Map<String, Object> data) {
 
         String result = service.generateSitemap(data);
 
-        // ❌ don't save invalid
+        //  don't save invalid
         if (result.equals("No valid URL provided") || result.equals("Invalid input")) {
             return result;
         }
