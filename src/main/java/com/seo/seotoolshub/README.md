@@ -1,134 +1,193 @@
-#  SEO Tools Hub (Spring Boot Project)
+#  SEO Tools Hub (Backend Project)
 
-##  Project Description
+##  Overview
 
-SEO Tools Hub is a Spring Boot based REST API project that analyzes a website's SEO performance.
-It fetches webpage data using Jsoup and calculates important SEO metrics like title length, description length, word count, keyword frequency, and SEO score.
+SEO Tools Hub is a backend application developed using Spring Boot that provides multiple SEO-related functionalities through REST APIs.
+It allows users to analyze websites, generate SEO data, and retrieve useful insights in real-time.
 
 ---
 
 ##  Features
 
-* Analyze any website URL
-* Extract:
+###  1. SEO Analysis
 
-    * Page Title
-    * Meta Description
-    * Word Count
-    * Keyword Count
-* Calculate SEO Score
-* Store results in MySQL database
-* REST API tested using Postman
+* Analyze a website using URL and keyword
+* Returns:
+
+  * Word count
+  * Keyword count
+  * SEO score
 
 ---
 
-##  Technologies Used
+###  2. SEO Audit
 
-* Java 17
+* Extracts important SEO elements from a webpage
+* Returns:
+
+  * Title
+  * Meta description
+
+---
+
+###  3. Keyword Tool
+
+* Generates keyword suggestions based on input keyword
+
+---
+
+###  4. Backlink Checker
+
+* Provides backlink count for a given URL
+
+---
+
+###  5. SEO Generators
+
+####  Meta Tag Generator
+
+* Generates HTML meta tags:
+
+  * Title
+  * Description
+  * Keywords
+
+####  Sitemap Generator
+
+* Generates XML sitemap for given URLs
+
+---
+
+##  Tech Stack
+
+* Java
 * Spring Boot
 * Spring Data JPA
 * MySQL
-* Jsoup (for web scraping)
-* Postman (API testing)
-* IntelliJ IDEA
+* Jsoup
+* Postman
 
 ---
 
 ##  Project Structure
 
+```
 com.seo.seotoolshub
-│── controller
-│── service
-│── repository
-│── model
-│── resources
+ ├── controller
+ ├── service
+ ├── repository
+ ├── model
+```
 
 ---
 
-##  API Endpoint
+##  How to Run
 
-###  Analyze Website SEO
+1. Clone the repository
+2. Open in IntelliJ / Eclipse
+3. Configure MySQL in `application.properties`
+4. Run the main class:
 
-**Method:** GET
+   ```
+   SeoToolsHubApplication.java
+   ```
+5. Server starts at:
 
-**URL:**
-http://localhost:8080/seo/analyze
-
-**Query Parameters:**
-
-* url = Website URL
-* keyword = Keyword to analyze
-
----
-
-##  Example Request
-
-http://localhost:8080/seo/analyze?url=https://wikipedia.org&keyword=wiki
+   ```
+   http://localhost:8080
+   ```
 
 ---
 
-##  Example Response
+##  API Endpoints
+
+###  SEO Analysis
+
+```
+GET /seo/analyze?url={url}&keyword={keyword}
+```
+
+###  SEO Audit
+
+```
+GET /seo/audit?url={url}
+```
+
+###  Keyword Tool
+
+```
+GET /seo/keywords?keyword={keyword}
+```
+
+###  Backlink Checker
+
+```
+GET /seo/backlinks?url={url}
+```
+
+###  Meta Generator
+
+```
+POST /seo/meta
+```
+
+#### Sample Body:
 
 ```json
 {
-  "title": "Wikipedia",
-  "description": "Wikipedia is a free online encyclopedia...",
-  "wordCount": 775,
-  "score": 70,
-  "keywordCount": 24
+  "title": "My Website",
+  "description": "Best SEO tools",
+  "keywords": "seo, tools, website"
 }
 ```
 
 ---
 
-##  Database (MySQL)
+###  Sitemap Generator
 
-Table Name: `seo_result`
+```
+POST /seo/sitemap
+```
 
-Columns:
+#### Sample Body:
 
-* id
-* url
-* keyword
-* score
-* word_count
-* keyword_count
-
----
-
-##  How to Run Project
-
-1. Open project in IntelliJ IDEA
-2. Run `SeoToolsHubApplication.java`
-3. Server starts on port 8080
-4. Open Postman
-5. Send GET request
+```json
+{
+  "urls": [
+    "https://google.com",
+    "https://github.com"
+  ]
+}
+```
 
 ---
 
 ##  Testing
 
-* Tool used: Postman
-* API tested with multiple URLs
-* Data stored successfully in MySQL
+* All APIs tested using Postman
+* Real-time results verified
+* Database entries confirmed in MySQL
 
 ---
 
-##  Future Improvements
+##  Highlights
 
-* Add frontend UI (React / HTML)
-* Add more SEO metrics
-* Add authentication
-* Export reports (PDF)
+* Clean layered architecture (Controller → Service → Repository)
+* Real-time web scraping using Jsoup
+* RESTful API design
+* MySQL database integration
+* No dummy/static data
+
+---
+
+##  Conclusion
+
+This project demonstrates backend development skills using Spring Boot, including API development, database integration, and real-time data processing.
 
 ---
 
 ##  Author
 
-Sharath Kumar
+**Sharath Kumar**
 
 ---
-
-##  Note
-
-This project is built for learning and demonstration purposes.

@@ -11,25 +11,53 @@ public class SeoResult {
 
     private String url;
     private String keyword;
-    private int score;
     private int wordCount;
     private int keywordCount;
+    private int score;
 
-    // Getters and Setters
-    public Long getId() { return id; }
+    // ✅ GETTERS AND SETTERS
 
-    public String getUrl() { return url; }
-    public void setUrl(String url) { this.url = url; }
+    public Long getId() {
+        return id;
+    }
 
-    public String getKeyword() { return keyword; }
-    public void setKeyword(String keyword) { this.keyword = keyword; }
+    public String getUrl() {
+        return url;
+    }
 
-    public int getScore() { return score; }
-    public void setScore(int score) { this.score = score; }
+    public void setUrl(String url) {
+        this.url = url;
+    }
 
-    public int getWordCount() { return wordCount; }
-    public void setWordCount(int wordCount) { this.wordCount = wordCount; }
+    public String getKeyword() {
+        return keyword;
+    }
 
-    public int getKeywordCount() { return keywordCount; }
-    public void setKeywordCount(int keywordCount) { this.keywordCount = keywordCount; }
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    public int getWordCount() {
+        return wordCount;
+    }
+
+    public void setWordCount(int wordCount) {
+        this.wordCount = wordCount;
+    }
+
+    public int getKeywordCount() {
+        return keywordCount;
+    }
+
+    public void setKeywordCount(int keywordCount) {
+        this.keywordCount = keywordCount;
+    }
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 }
